@@ -1,20 +1,21 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld/>
+      <PokedexLogic/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import PokedexLogic from './components/pokedexLogic.vue';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
-  },
+    PokedexLogic,
+},
 
   data: () => ({
     //
