@@ -1,17 +1,17 @@
-<template>
+<template >
   <v-container>
     <v-card>
       <v-container style="background-color: aquamarine;">
         <v-row>
-            <v-col cols="4" v-for="pokemon in pokemonList" :key="pokemon.name">
-              <v-card variant="outlined" style="background-color: aliceblue;">
-                <v-container class="text-center">
-                  <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + numeroDoPokemon(pokemon.url) + '.png'" id="imagem" style="width: 200px; text-align: center;" />
-                  <h2 class="text-center">{{ pokemon.name }}</h2>
-                </v-container>
-              </v-card>
-            </v-col>
-          </v-row>
+          <v-col cols="4" v-for="pokemon in pokemonList" :key="pokemon.name">
+            <v-card variant="outlined" style="background-color: aliceblue;" @click="navigateToDetails(pokemon)">
+              <v-container class="text-center">
+                <img :src="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + numeroDoPokemon(pokemon.url) + '.png'" id="imagem" style="width: 200px; text-align: center;" />
+                <h2 class="text-center">{{ pokemon.name }}</h2>
+              </v-container>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-container>
     </v-card>
   </v-container>
@@ -37,6 +37,11 @@ export default {
       const splitUrl = url.split("/");
       const pokemonId = splitUrl[splitUrl.length - 2];
       return pokemonId;
+    },
+
+    navigateToDetails(pokemon) {
+      const pokemonId = this.numeroDoPokemon(pokemon.url);
+      this.$router.push({ name: 'pokemonDetails', params: { id: pokemonId } });
     }
 
   },
@@ -53,10 +58,5 @@ export default {
 </script>
 
 <style>
-
-body {
-  background-color: darkgrey;
-}
-
 
 </style>

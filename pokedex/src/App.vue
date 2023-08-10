@@ -1,24 +1,21 @@
 <template>
   <v-app>
     <v-main>
-      <PokedexLogic/>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
 
-import PokedexLogic from './components/pokedexLogic.vue';
-
 export default {
-  name: 'App',
+    data() {
+        //shh
+    },
 
-  components: {
-    PokedexLogic,
-},
-
-  data: () => ({
-    //
-  }),
 }
 </script>
+
+<style>
+
+</style>
