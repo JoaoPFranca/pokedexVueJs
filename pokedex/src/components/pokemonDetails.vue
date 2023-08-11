@@ -5,15 +5,15 @@
         <v-img :src="pokemonImageUrl" id="imagem" style="width: 400px; text-align: center;" />
       </div>
 
-      <div style=" margin: 0; position: absolute; top: 22%; font-size: 32px; margin-left: 24em;">
+      <div style=" margin: 0; position: absolute; top: 22%; font-size: 32px; margin-left: 20em;">
         <h2>{{ pokemonId }} - {{ pokemonName }}</h2>
       </div>
 
-      <div style=" margin: 0; position: absolute; top: 47%; font-size: 28px; margin-left: 31em;">
+      <div style=" margin: 0; position: absolute; top: 47%; font-size: 28px; margin-left: 28em;">
         <h2>{{ pokemonMove1 }}</h2>
       </div>
 
-      <div style=" margin: 0; position: absolute; top: 55.5%; font-size: 28px; margin-left: 31em;">
+      <div style=" margin: 0; position: absolute; top: 55.5%; font-size: 28px; margin-left: 28em;">
         <h2>{{ pokemonMove2 }}</h2>
       </div>
     </v-container>
@@ -69,5 +69,14 @@ export default {
   background-size: 100% 100%;
   width: 100vw;
   height: 100vh;
+}
+
+@font-face {
+  font-family: PokemonFont;
+  src: url("~@/assets/PKMN RBYGSC.ttf")
+}
+
+* {
+  font-family: PokemonFont;
 }
 </style>
