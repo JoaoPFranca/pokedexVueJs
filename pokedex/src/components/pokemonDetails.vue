@@ -5,15 +5,19 @@
         <v-img :src="pokemonImageUrl" id="imagem" style="width: 400px; text-align: center;" />
       </div>
 
-      <div style=" margin: 0; position: absolute; top: 22%; font-size: 32px; margin-left: 20em;">
-        <h2>{{ pokemonId }} - {{ pokemonName }}</h2>
+      <div style=" margin: 0; position: absolute; top: 11.5%; font-size: 28px; margin-left: 25em;">
+        <h2>{{ pokemonId }}</h2>
       </div>
 
-      <div style=" margin: 0; position: absolute; top: 47%; font-size: 28px; margin-left: 28em;">
+      <div style=" margin: 0; position: absolute; top: 22%; font-size: 32px; margin-left: 20em;">
+        <h2>{{ pokemonName }}</h2>
+      </div>
+
+      <div style=" margin: 0; position: absolute; top: 47%; font-size: 26px; margin-left: 30em;">
         <h2>{{ pokemonMove1 }}</h2>
       </div>
 
-      <div style=" margin: 0; position: absolute; top: 55.5%; font-size: 28px; margin-left: 28em;">
+      <div style=" margin: 0; position: absolute; top: 55.5%; font-size: 26px; margin-left: 30em;">
         <h2>{{ pokemonMove2 }}</h2>
       </div>
     </v-container>
@@ -40,6 +44,7 @@ export default {
       const pokemonId = parts[parts.length - 1];
       return pokemonId;
     },
+
 
     getPokemon () {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${this.pokemonId}`).then((resp) => {
