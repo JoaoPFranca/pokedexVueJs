@@ -1,5 +1,8 @@
 <template>
   <div class="background-container">
+    <v-btn @click="backToTheHomepage()" width="100px" height="50px" style="margin-left: 2.5em; margin-top: 0.5em;">
+      <v-icon>mdi-home</v-icon>
+    </v-btn>
     <v-container>
       <div style=" margin: 0; position: absolute; top: 43%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
         <v-img :src="pokemonImageUrl" id="imagem" style="width: 400px; text-align: center;" />
@@ -45,6 +48,9 @@ export default {
       return pokemonId;
     },
 
+    backToTheHomepage() {
+      this.$router.push({ name: 'pokemonLogic', params: {id: this.pokemonId}})
+    },
 
     getPokemon () {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${this.pokemonId}`).then((resp) => {

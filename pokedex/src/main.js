@@ -12,7 +12,7 @@ loadFonts();
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: pokedexLogic },
+    { path: '/', name: 'pokemonLogic', component: pokedexLogic },
     { path: '/pokemon/:id', name: 'pokemonDetails', component: pokemonDetails }
   ]
 });
