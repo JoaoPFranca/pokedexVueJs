@@ -23,6 +23,11 @@
             </v-card>
           </v-col>
         </v-row>
+        <v-row justify="center">
+            <v-col cols="9">
+              <v-pagination v-model="currentPage" :length="totalPages"></v-pagination>
+            </v-col>
+          </v-row>
       </v-container>
     </v-card>
   </v-container>
