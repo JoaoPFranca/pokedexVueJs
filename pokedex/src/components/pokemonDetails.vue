@@ -1,6 +1,7 @@
 <template>
   <div class="background-container">
-    <v-btn @click="backToTheHomepage()" width="100px" height="50px" style="margin-left: 2.5em; margin-top: 0.5em;">
+    
+    <v-btn @click="backToTheHomepage()" width="100px" height="50px" style="margin-left: 6em; margin-top: 6em;">
       <v-icon>mdi-home</v-icon>
     </v-btn>
     <v-container>
@@ -23,6 +24,14 @@
       <div style=" margin: 0; position: absolute; top: 55.5%; font-size: 26px; margin-left: 30em;">
         <h2>{{ pokemonMove2 }}</h2>
       </div>
+
+      <div style="margin: 0; position: absolute; top: 76%; font-size: 24px; margin-left: 18.5em;">
+        <h3>Type: {{ pokemonType }} </h3>
+      </div>
+
+      <div style="margin: 0; position: absolute; top: 84%; font-size: 20px; margin-left: 22em;">
+        <h3> WT: {{ pokemonWeight/10 }}Kg HT: {{ pokemonHeight/10 }}m </h3>
+      </div>
     </v-container>
   </div>
 </template>
@@ -38,6 +47,9 @@ export default {
       pokemonName: null,
       pokemonMove1: null,
       pokemonMove2: null,
+      pokemonHeight: null,
+      pokemonWeight: null,
+      pokemonType: null,
     };
   },
 
@@ -61,6 +73,10 @@ export default {
         if (resp.data.moves.length >= 2) {
           this.pokemonMove2 = resp.data.moves[1].move.name.toUpperCase();
         }
+        this.pokemonWeight = resp.data.weight
+        this.pokemonHeight = resp.data.height
+
+        this.pokemonType = resp.data.types[0].type.name.toUpperCase();
     });
     },
   },
